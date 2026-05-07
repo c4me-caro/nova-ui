@@ -49,6 +49,6 @@ export class NvBadge extends LitElement {
 
 declare global {
   interface HTMLElementTagNameMap {
-    'nv-button': NvBadge;
+    'nv-badge': NvBadge;
   }
 }

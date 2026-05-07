@@ -18,7 +18,6 @@ export class NvCards extends LitElement {
 
   render() {
     return html`<div class="cards"><slot></slot></div>`;
-    // active, inactive, accert, alert
   }
 }
 
@@ -26,16 +25,30 @@ export class NvCards extends LitElement {
 export class NvCard extends LitElement {
   @property({ type: String }) image = "";
   @property({ type: String }) title = "";
-  @property({ type: String }) subtle = "";
-  @property({ type: String }) btnId = "";
   @property({ type: String }) btnText = "";
   @property({ type: String }) linkText = "";
   @property({ type: String }) href = "";
 
   static styles = css`
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-hover-color);
+}
+
+a:focus,
+a:active {
+  color: var(--primary-hover-color);
+}
+
 .card {
   border: 1px solid var(--inactive-color);
-  width: 300px;
+  max-width: 300px;
   border-radius: 6px;
 }
 
@@ -47,6 +60,10 @@ export class NvCard extends LitElement {
 
 .card-content {
   padding: 0.5rem;
+}
+
+.card-content h4 {
+  margin: 0;
 }
 
 .card-content p {
@@ -63,18 +80,26 @@ export class NvCard extends LitElement {
 }
   `;
 
+  _dispatchClick(e: Event) {
+    e.stopPropagation();
+    this.dispatchEvent(new CustomEvent('btn-card', {
+      detail: {title: this.title},
+      composed: true,
+      bubbles: true
+    }));
+  }
+
   render() {
     return html`
 <div class="card">
   <img src="${this.image}">
   <div class="card-content">
     <h4>${this.title}</h4>
-    <h6>${this.subtle}</h6>
     <p><slot></slot></p>
   </div>
   <div class="card-footer">
     <a href="${this.href}">${this.linkText}</a>
-    <nv-button class="primary" text="${this.btnText}" id="${this.btnId}"></nv-button>
+    <nv-button type="inactive" text="${this.btnText}" @click=${this._dispatchClick}></nv-button>
   </div>
 </div>
     `;

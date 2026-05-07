@@ -90,6 +90,27 @@ navegacion
     <nv-nav-item text="Contacto" types="active"></nv-nav-item>
 </nv-navbar>
 ```
+
+cards
+```html
+  <div class="container">
+    <div class="content">
+      <nv-cards>
+        <nv-card image="img/avatar.jpg" title="mititulo" btnText="accion btn" linkText="ir al link" href="#" id="card1">Lorem
+          ipsum dolor sit amet consectetur adipisicing elit. Quas magni commodi debitis maxime non inventore sapiente
+          possimus odio, magnam dolore natus iste dolores ipsa repellat exercitationem provident, dolor pariatur
+          ullam.</nv-card>
+      </nv-cards>
+    </div>
+  </div>
+```
+
+para las acciones del botón se debe escuchar por el evento btn-card en el nv-card requerido
+```js
+document.getElementById("card1").addEventListener('btn-card', () => { alert("hello world!"); });
+```
+
+
 ## Color Reference
 
 | Variable                   |Color por defecto|
