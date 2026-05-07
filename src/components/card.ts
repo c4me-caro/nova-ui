@@ -47,7 +47,6 @@ a:active {
 }
 
 .card {
-  border: 1px solid var(--inactive-color);
   max-width: 300px;
   border-radius: 6px;
 }
