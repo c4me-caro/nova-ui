@@ -7,3 +7,4 @@ export * from './components/alert.js';
 export * from './components/toast.js';
 export * from './components/card.js';
 export * from './components/navbar.js';
+export * from './components/hero.js';
