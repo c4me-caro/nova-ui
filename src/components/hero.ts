@@ -14,7 +14,10 @@ export class NvHero extends LitElement {
   bottom: 0;
   width: 100%;
   height: 100dvh;
-  background: linear-gradient(color-mix(in srgb, var(--background-color), transparent 40%), color-mix(in srgb, var(--background-color), transparent 20%)), var(--hero-image);
+  background: radial-gradient(
+    color-mix(in srgb, var(--background-color), transparent 15%),
+    color-mix(in srgb, var(--background-color), transparent 10%)
+  ), var(--hero-image);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

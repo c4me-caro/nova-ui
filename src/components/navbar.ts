@@ -70,7 +70,7 @@ nav {
 @customElement('nv-nav-item')
 export class NvNavItem extends LitElement {
   @property({ type: String }) text = "";
-  @property({ type: String }) types = "";
+  @property({ type: String }) type = "";
 
   static styles = css`
 .nav-item {
@@ -99,7 +99,7 @@ export class NvNavItem extends LitElement {
   `;
 
   render() {
-    return html`<li class="nav-item ${this.types}">${this.text}</li>`;
+    return html`<li class="nav-item ${this.type}">${this.text}</li>`;
   }
 }
 

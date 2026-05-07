@@ -16,6 +16,11 @@ button {
   transition: 0.3s;
   font-size: medium;
   font-weight: 600;
+  background-color: var(--text-color);
+}
+
+button:hover {
+  background-color: var(--text-emphasys-color);
 }
 
 button.primary {

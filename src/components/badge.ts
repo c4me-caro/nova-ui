@@ -42,7 +42,7 @@ export class NvBadge extends LitElement {
   `;
 
   render() {
-    return html`<span class="badge ${this.type}">${this.text}</button>`;
+    return html`<span class="badge badge-${this.type}">${this.text}</button>`;
     // active, inactive, accert, alert
   }
 }

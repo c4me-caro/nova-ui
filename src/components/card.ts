@@ -7,10 +7,12 @@ import './button.js';
 export class NvCards extends LitElement {
   static styles = css`
 .cards {
-  width: 0;
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
+  justify-content: center;
+  align-items: center;
 }
   `;
 
@@ -25,7 +27,6 @@ export class NvCard extends LitElement {
   @property({ type: String }) image = "";
   @property({ type: String }) title = "";
   @property({ type: String }) subtle = "";
-  @property({ type: String }) text = "";
   @property({ type: String }) btnId = "";
   @property({ type: String }) btnText = "";
   @property({ type: String }) linkText = "";
@@ -39,6 +40,7 @@ export class NvCard extends LitElement {
 }
 
 .card img {
+  width: 300px;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
@@ -64,11 +66,11 @@ export class NvCard extends LitElement {
   render() {
     return html`
 <div class="card">
-  <img src="${this.image}" alt="otra persona">
+  <img src="${this.image}">
   <div class="card-content">
     <h4>${this.title}</h4>
     <h6>${this.subtle}</h6>
-    <p>${this.text}</p>
+    <p><slot></slot></p>
   </div>
   <div class="card-footer">
     <a href="${this.href}">${this.linkText}</a>
