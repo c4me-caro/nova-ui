@@ -1,0 +1,18 @@
+:root {
+  --primary-color: #ba85ee;
+  --primary-hover-color: #a258eb;
+  --secondary-light-color: #f9dada;
+  --secondary-color: #ee8685;
+  --secondary-hover-color: #e75b5a;
+  --secondary-dark-color: #8a3a39;
+  --background-color: #f1f1f3;
+  --background-component-color: #ffffff;
+  --text-color: #757589;
+  --text-emphasys-color: #232329;
+  --text-emphasys-darker-color: #020207;
+  --inactive-color: #dbdbdb;
+  --positive-color: #7ce87c;
+  --positive-dark-color: #5fc85f;
+  --circle-percentaje: 5%;
+  --title-point-type: 1;
+}
